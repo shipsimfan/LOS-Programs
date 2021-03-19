@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    printf(buffer);
+    printf("%s\n", buffer);
 
     fclose(file);
 
