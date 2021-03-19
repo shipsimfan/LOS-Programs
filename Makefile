@@ -1,15 +1,18 @@
 # DIRECTORIES
 BIN_DIR := ./bin
 
+CAT_SRC_DIR := ./cat
 LS_SRC_DIR := ./ls
 
 # TARGET PROGRAMS
+CAT := $(BIN_DIR)/cat
 LS := $(BIN_DIR)/ls
 
 # TARGET
-PROGRAMS := $(LS)
+PROGRAMS := $(CAT) $(LS)
 
 # SOURCE FILES
+CAT_SRC_FILES := $(shell find $(CAT_SRC_DIR) -name '*.c')
 LS_SRC_FILES := $(shell find $(LS_SRC_DIR) -name '*.c')
 
 # PROGRAMS
@@ -33,7 +36,11 @@ clean:
 .SECONDEXPANSION:
 
 $(LS): $(LS_SRC_FILES)
-	@echo "[ LS ] (CC) $@ . . ."
+	@echo "[ PROGRAMS ][ LS ] (CC) $@ . . ."
+	@$(CC) $(CC_FLAGS) -o $@ $^
+
+$(CAT): $(CAT_SRC_FILES)
+	@echo "[ PROGRAMS ][ CAT ] (CC) $@ . . . "
 	@$(CC) $(CC_FLAGS) -o $@ $^
 
 dirs:
