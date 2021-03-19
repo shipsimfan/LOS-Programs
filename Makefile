@@ -4,7 +4,7 @@ BIN_DIR := ./bin
 LS_SRC_DIR := ./ls
 
 # TARGET PROGRAMS
-LS := $(BIN_DIR)/ls.app
+LS := $(BIN_DIR)/ls
 
 # TARGET
 PROGRAMS := $(LS)
